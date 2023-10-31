@@ -18,7 +18,7 @@ app.use(
         origin: BASE_URL,
         methods: "GET,POST,PUT,DELETE,PATCH",
         credentials: true,
-        headers: "Content-Type,X-Auth-Token,Origin,Authorization,X-Requested-With,Access-Control-Allow-Headers,access-control-allow-credentials",
+        headers: "Content-Type,X-Auth-Token,Origin,Authorization,X-Requested-With,Access-Control-Allow-Headers,access-control-allow-credentials,Access-Control-Allow-Origin",
     })
 );
 
