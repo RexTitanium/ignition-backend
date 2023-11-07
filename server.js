@@ -11,11 +11,12 @@ const courseRoutes=require('./routes/course.js');
 const db = require('./db/conn')
 const emailRoutes = require("./routes/email");
 const port = process.env.PORT || 4000;
-const BASE_URL = process.env.BASE_URL
+const CLIENT_URL = process.env.CLIENT_URL
+
 
 app.use(
     cors({
-        origin: BASE_URL,
+        origin: CLIENT_URL,
         methods: "GET,POST,PUT,DELETE,PATCH",
         credentials: true,
         headers: "Content-Type,X-Auth-Token,Origin,Authorization,X-Requested-With,Access-Control-Allow-Headers,access-control-allow-credentials,Access-Control-Allow-Origin",
