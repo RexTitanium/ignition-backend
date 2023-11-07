@@ -56,14 +56,16 @@ async function comparePassword(password,passwordsaved){
 
 //Read
 router.post('/api/users/login', async (req, res) => {
+    
     const { email, password } = req.body;
     try {
         const user = await User.findOne({ email });
+        console.log(user,password)
         if (!user) {
             return res.status(401).json({ message: 'Email Not Found' });
         }
-        decryptcompare=await comparePassword(password,user.password)
-        if (user.password === decryptcompare)
+        decryptcompare=await comparePassword(password,user.encryptpassword)
+        if (decryptcompare)
             res.status(200).json({ user });
         else
             res.status(401).json({ message: 'Invalid Password' });
